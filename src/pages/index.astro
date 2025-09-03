@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "../components/PlotFigure.astro";
+import penguins from "../assets/penguins.json";
+import pizza from "../assets/pizza.json";
+---
+
+<Layout>
+	<div>
+		<h1>Les Penguins</h1>
+		<PlotFigure
+			options={{
+				marks: [
+					Plot.dot(penguins, {
+						x: "culmen_length_mm",
+						y: "culmen_depth_mm",
+					}),
+				],
+			}}
+		/>
+	</div>
+	<div>
+		<h1>Les Penguins par espèce</h1>
+		<PlotFigure
+			options={{
+				marks: [
+					Plot.dot(penguins, {
+						x: "culmen_length_mm",
+						y: "culmen_depth_mm",
+						fill: "species",
+						r: 3,
+					}),
+				],
+			}}
+		/>
+	</div>
+
+	<div>
+		<h1>Les Penguins par sexe</h1>
+		<PlotFigure
+			options={{
+				marks: [
+					Plot.dot(penguins, {
+						x: "culmen_length_mm",
+						y: "culmen_depth_mm",
+						fill: "sex",
+					}),
+				],
+			}}
+		/>
+	</div>
+
+	<div>
+		<h1>Les Pizzas</h1>
+		<PlotFigure
+			options={{
+				marks: [
+					Plot.dot(pizza, {
+						x: "price",
+						y: "name",
+					}),
+				],
+			}}
+		/>
+		<h1>Les Pizzas par prix</h1>
+		<PlotFigure
+			options={{
+				marks: [
+					Plot.dot(pizza, {
+						x: "price",
+						y: "price",
+						fill: "price",
+					}),
+				],
+			}}
+		/>
+	</div>
+</Layout>
