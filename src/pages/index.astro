@@ -41,10 +41,10 @@ import pizza from "../assets/pizza.json";
 		<PlotFigure
 			options={{
 				marks: [
-					Plot.dot(penguins, {
-						x: "culmen_length_mm",
+					Plot.barY(penguins, {
+						x: "species",
 						y: "culmen_depth_mm",
-						fill: "sex",
+						fill: "species",
 					}),
 				],
 			}}
@@ -56,22 +56,12 @@ import pizza from "../assets/pizza.json";
 		<PlotFigure
 			options={{
 				marks: [
-					Plot.dot(pizza, {
-						x: "price",
-						y: "name",
-					}),
-				],
-			}}
-		/>
-		<h1>Les Pizzas par prix</h1>
-		<PlotFigure
-			options={{
-				marks: [
-					Plot.dot(pizza, {
+					Plot.barY(pizza, {
 						x: "price",
 						y: "price",
 						fill: "price",
 					}),
+					Plot.ruleY([0]),
 				],
 			}}
 		/>

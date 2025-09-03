@@ -1,7 +1,7 @@
 # Astro Starter Kit: Basics
 Nom: WICKY
 Prénom: Arthur
-URL Netlify : 
+URL Netlify : https://roaring-fox-b26cf7.netlify.app/
 
 ```sh
 npm create astro@latest -- --template basics
